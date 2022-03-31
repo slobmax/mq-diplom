@@ -374,6 +374,19 @@
 
 .trends__cards {
   display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1200px) {
+  .trends__cards {
+    flex-wrap: no-wrap;
+  }
+}
+
+@media (min-height: 641px) and (max-height: 1200px) and (orientation: landscape) {
+  .trends__cards {
+    flex-wrap: no-wrap;
+  }
 }
 
 .trends__card {
@@ -388,22 +401,22 @@
   z-index: 0;
 }
 
+/*-------desktop---------------------*/
+
 @media (min-width: 1201px) {
   .trends__card {
     width: calc(25% - 3px);
+    min-height: 320px;
   }
 
   .trends__card:not(:last-child) {
-    min-height: 320px;
     margin-right: 4px;
   }
 }
 
-@media (min-width: 641px) and (max-width: 1200px) {
-  .trends__cards {
-    flex-wrap: wrap;
-  }
- 
+/*------------tablet-----------------*/
+
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: portrait) {
   .trends__card {
     width: calc(50% - 1.5px);
     min-height: 247px;
@@ -418,12 +431,36 @@
   }
 }
 
-@media (max-width: 640px) {
-   .trends__cards {
-    flex-wrap: wrap;
+@media (min-height: 641px) and (min-width: 993px) and (orientation: landscape) {
+  .trends__card {
+    width: calc(25% - 3px);
+    min-height: 320px;
   }
 
-   .trends__card {
+  .trends__card:not(:last-child) {
+    margin-right: 4px;
+  }  
+}
+
+@media (min-height: 641px) and (max-width: 992px) and (orientation: landscape) {
+  .trends__card {
+    width: calc(50% - 1.5px);
+    min-height: 247px;
+  }
+
+  .trends__card:nth-child(odd) {
+    margin-right: 3px;
+  }
+
+  .trends__card:nth-child(-n+2) {
+    margin-bottom: 3px;
+  }
+}
+
+/*-------mobile----------------------*/
+
+@media (max-width: 640px) and (orientation: portrait) {
+  .trends__card {
     width: 100%;
     min-height: 232px;
     padding: 17px 17px;
@@ -433,6 +470,35 @@
     margin-bottom: 2px;
   }
 }
+
+@media (max-height: 640px) and (min-width: 441px) and (orientation: landscape) {
+  .trends__card {
+    width: calc(50% - 1.5px);
+    min-height: 247px;
+  }
+
+  .trends__card:nth-child(odd) {
+    margin-right: 3px;
+  }
+
+  .trends__card:nth-child(-n+2) {
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-height: 640px) and (max-width: 440px) and (orientation: landscape) {
+  .trends__card {
+    width: 100%;
+    min-height: 232px;
+    padding: 17px 17px;
+  }
+
+   .trends__card:not(:last-child) {
+    margin-bottom: 2px;
+  }
+}
+
+/*-------end mobile-------------------*/
 
 .trends__card::after {
   content: "";
