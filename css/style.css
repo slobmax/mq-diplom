@@ -45,6 +45,18 @@
   margin-top: 60px;
 }
 
+@media (min-width: 641px) and (max-width: 1200px) {
+  ._page__section {
+    margin-top: 45px;
+  }
+}
+
+@media (max-width: 640px) {
+  ._page__section {
+    margin-top: 40px;
+  }
+}
+
 ._title {  
   font-weight: 700;
   color: #0f0d0e;
@@ -56,16 +68,14 @@
 
 @media (min-width: 641px) and (max-width: 1200px) {
   ._title {
-    font-size: 18px;
-    margin-top: 45px;
+    font-size: 18px;    
     margin-bottom: 20px;
   }
 }
 
 @media (max-width: 640px) {
   ._title {
-    font-size: 16px;
-    margin-top: 40px;
+    font-size: 16px;   
     margin-bottom: 25px;
   }
 }
